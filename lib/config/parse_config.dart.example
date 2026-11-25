@@ -1,0 +1,17 @@
+import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
+
+class ParseConfig {
+  static const String applicationId = 'YOUR_APPLICATION_ID';
+  static const String clientKey = 'YOUR_CLIENT_KEY';
+  static const String serverUrl = 'https://parseapi.back4app.com';
+
+  static Future<void> initialize() async {
+    await Parse().initialize(
+      applicationId,
+      serverUrl,
+      clientKey: clientKey,
+      autoSendSessionId: true,
+      debug: false,
+    );
+  }
+}
